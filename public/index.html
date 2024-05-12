@@ -131,13 +131,15 @@
     >
       <!-- side bar -->
       <aside class="col-span-3 row-span-2 hidden md:block mr-6 h-3/4">
-        <div class="bg-gray-200 mr-6 p-6 rounded-lg mb-4">
+        <div class="bg-gray-200 mr-6 lg:px-6 py-6 px-1 rounded-lg mb-4">
           <div class="space-y-6 mb-8">
-            <span class="text-orange-700 font-medium text-lg">دسته بندی</span>
+            <span class="text-orange-700 font-medium md:text-md"
+              >دسته بندی</span
+            >
 
             <ul class="flex justify-start items-start gap-4 flex-col">
               <li
-                class="flex justify-end items-center flex-row-reverse cursor-pointer gap-5 text-slate-800/50"
+                class="flex justify-end text-sm items-center flex-row-reverse cursor-pointer gap-5 text-slate-800/50"
               >
                 <span>تلفن همراه</span>
                 <div class="w-5 h-5 bg-gray-100 rounded-full p-2">
@@ -174,7 +176,7 @@
                 </div>
               </li>
               <li
-                class="flex justify-end items-center flex-row-reverse cursor-pointer gap-5 text-slate-800/50"
+                class="flex justify-end text-sm items-center flex-row-reverse cursor-pointer gap-5 text-slate-800/50"
               >
                 <span>لپ تاپ</span>
                 <div class="w-5 h-5 bg-gray-100 rounded-full p-2">
@@ -256,7 +258,7 @@
                 </div>
               </li>
               <li
-                class="flex justify-end items-center flex-row-reverse cursor-pointer gap-5 text-slate-800"
+                class="flex justify-end text-sm items-center flex-row-reverse cursor-pointer gap-5 text-slate-800"
               >
                 <span>ساعت هوشمند</span>
                 <div class="w-5 h-5 bg-gray-100 rounded-full p-2">
@@ -304,9 +306,9 @@
           <div class="bg-gray-400/50 h-[0.01rem] w-full mb-4"></div>
 
           <div class="space-y-6 mb-8">
-            <span class="text-orange-700 font-medium text-lg">فیلتر </span>
+            <span class="text-orange-700 font-medium md:text-lg">فیلتر </span>
             <ul
-              class="text-orange-700 font-medium flex justify-start flex-col gap-4"
+              class="text-orange-700 font-medium text-xs flex justify-start flex-col gap-4"
             >
               <li class="space-y-4" x-data="{open:true}">
                 <div
@@ -543,12 +545,15 @@
         </div>
       </aside>
 
-      <!-- search bar desktop -->
+      <!-- search bar desktop after:contents-[' '] after:bg-orange-700 after:rounded-full after:w-1 after:h-1 after:translate-x-1 after:-translate-y-1 -->
       <ul
-        class="shadow-sm col-span-9 rounded-lg bg-stone-50 hidden md:flex text-gray-500 justify-start items-center gap-6 text-xs ml-4 p-2"
+        x-data="{ show: 'zero', activeClass:' flex justify-start items-center gap-2 font-medium text-slate-800  after:bg-orange-700 after:rounded-full after:w-1 after:h-1 after:translate-x-1 after:-translate-y-1 '}"
+        class="shadow-sm col-span-9 rounded-lg bg-stone-50 hidden md:flex text-gray-500 justify-start items-center text-xs ml-4 p-2"
       >
         <li
-          class="flex justify-start items-center gap-2 font-medium text-slate-800 after:contents-[' '] after:bg-orange-700 after:rounded-full after:w-1 after:h-1 after:translate-x-1 after:-translate-y-1"
+          @click="show='one'"
+          :class="show==='one'?activeClass:''"
+          class="cursor-pointer pl-12 flex justify-start text-sm items-center gap-2"
         >
           <div
             class="flex justify-center items-center bg-red-100 p-2 rounded-lg"
@@ -595,16 +600,28 @@
               />
             </svg>
           </div>
-          <span class="">محبوب ترین محصول</span>
+          <span>محبوب ترین </span>
         </li>
-        <li>
-          <span>پربازدیدترین محصول</span>
+        <li
+          class="cursor-pointer pl-12 text-sm"
+          @click="show='two'"
+          :class="show==='two'?activeClass:''"
+        >
+          <span>پربازدیدترین </span>
         </li>
-        <li>
-          <span>گرانترین محصول</span>
+        <li
+          class="cursor-pointer pl-12 text-sm"
+          @click="show='three'"
+          :class="show==='three'?activeClass:''"
+        >
+          <span>گرانترین </span>
         </li>
-        <li>
-          <span>ارزانترین محصول</span>
+        <li
+          class="cursor-pointer pl-12 text-sm"
+          @click="show='four'"
+          :class="show==='four'?activeClass:''"
+        >
+          <span>ارزانترین </span>
         </li>
       </ul>
 
