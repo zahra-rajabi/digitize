@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "dana";
   font-style: normal;
   font-weight: 100;
@@ -32,4 +32,8 @@
   src: url("/assets/fonts/fonts/dana-medium/fonts/dana-medium.ttf")
       format("truetype"),
     url("/assets/fonts/fonts/dana-medium/fonts/dana-medium.woff") format("woff");
+} */
+@font-face {
+  font-family: "gandom";
+  src: url("/assets/fonts/Gandom.ttf") format("truetype");
 }

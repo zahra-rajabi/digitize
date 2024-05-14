@@ -3,7 +3,7 @@ module.exports = {
   content: ["./public/**/*.html"],
   theme: {
     fontFamily: {
-      dana: "dana",
+      gandom: "gandom",
     },
 
     extend: {
@@ -11,9 +11,9 @@ module.exports = {
         10: "11px",
       },
       screens: {
-        xsm: "340px",
+        xsm: "360px",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
